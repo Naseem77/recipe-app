@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="vewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Recipe App</title>
+</head>
+<body>
+    <div class="container">
+        <input id="inputRecipe" type="text">
+        <button id="btn">Search</button>
+    </div>
+    <div class="data"></div>
+
+    <script id="recipes-template" type="text/x-handlebars-template">
+        {{#each results}}
+            <div class="ingredients-container">
+                <a href="{{href}}">{{title}}</a>
+                <div class="recipe-div">
+                    <img id="{{idMeal}}" class="image" src="{{thumbnail}}" alt="No Photo Found">
+                </div>
+                <h2>Ingredients:</h2>
+                <ul class="ingredientsItems">
+                    {{#each ingredients}}
+                        <li class="ingredients-item"> {{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        {{/each}}       
+    </script>
+</body>
+<script src="/jquery/dist/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+<script src="main.js"></script>
+</html>

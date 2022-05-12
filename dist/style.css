@@ -1,0 +1,52 @@
+body {
+  background-color: #f8f8ff;
+}
+
+.container {
+  background-color: #f7f7f7;
+  margin: 30px;
+  padding-top: 2px;
+}
+
+#inputRecipe {
+  height: 30px;
+  width: 85%;
+}
+
+#btn {
+  margin-left: 30px;
+  width: 10%;
+  height: 30px;
+}
+
+.data {
+  background-color: #f7f7f7;
+  text-align: center;
+  display: grid;
+  margin: 20px;
+  padding: 10px;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.ingredientsItems {
+  text-align: center;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 15px;
+}
+.ingredients-container {
+  display: grid;
+  background-color: rgb(233, 213, 104);
+  text-align: center;
+}
+.ingredients-item {
+  display: grid;
+  text-align: center;
+}
+
+.image {
+  height: 200px;
+  width: 200px;
+  border-radius: 10%;
+}
