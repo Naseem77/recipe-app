@@ -9,11 +9,22 @@ app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
 
 
-let ingredients = [];
 
+let ingredients = []
 function getDataFromApi(ingredient) {
+    let temp = []
     urllib.request("https://recipes-goodness.herokuapp.com/recipes/" + ingredient, function (err, data, res) {
-        ingredients = JSON.parse(data.toString());
+
+        temp = JSON.parse(data.toString()).results;
+        ingredients = temp.map((i) => {
+          return {
+            idMeal: i.idMeal,
+            ingredients: i.ingredients,
+            title: i.title,
+            thumbnail: i.thumbnail,
+            href: i.href,
+          }
+        })
     }
   );
 }

@@ -11,7 +11,7 @@ const render = function(recipe) {
   $(".data").empty();
   const source = $("#recipes-template").html();
   const template = Handlebars.compile(source);
-  const newHTML = template(recipe);
+  const newHTML = template({recipe});
   $(".data").append(newHTML);
 };
 
